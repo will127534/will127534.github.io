@@ -7,3 +7,25 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Give the main content column a bit more room on wide desktop screens.
+@include breakpoint($x-large) {
+  #main {
+    max-width: 1720px;
+  }
+
+  .page,
+  .archive {
+    width: calc(100% - 200px);
+    padding-right: 200px;
+  }
+
+  .sidebar {
+    width: calc(200px - 1em);
+  }
+
+  .sidebar__right {
+    width: 200px;
+    margin-right: -200px;
+  }
+}
